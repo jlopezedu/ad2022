@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 /**
  * JavaFX App
  */
-public class UD01SampleApplication extends Application {
+public class UD01A01 extends Application {
 
     @Override
     public void start(@SuppressWarnings("exports") Stage primaryStage) {
