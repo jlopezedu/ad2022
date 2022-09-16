@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class UD01SampleApplication extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(@SuppressWarnings("exports") Stage primaryStage) {
     	new VentanaPrincipal(primaryStage).pintarVentana();
     }
 

@@ -2,6 +2,7 @@ package es.cipfpbatoi.damb.ad.ventanas;
 
 import java.io.File;
 
+import es.cipfpbatoi.damb.ad.procesador.rutas.ConfiguracionBusqueda;
 import es.cipfpbatoi.damb.ad.procesador.rutas.ProcesadorRutas;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -131,8 +132,14 @@ public class VentanaPrincipal {
 	}
 
 	private void onClickButtonProcesarRuta() {
-		String ruta = this.textFieldRuta.getText();
-		StringBuilder resultadoProceso = ProcesadorRutas.procesarRuta(ruta);
+		ConfiguracionBusqueda configuracionBusqueda = new ConfiguracionBusqueda();
+		
+		configuracionBusqueda.setRutaInicial(this.textFieldRuta.getText());
+		configuracionBusqueda.setFiltroNombre(this.textFieldFiltroNombre.getText());
+		configuracionBusqueda.setBuscarRecursivamente(this.checkBuscarRecursivamente.isSelected());
+		configuracionBusqueda.setMostrarArchivosOcultos(this.checkMostrarArchivosOcultos.isSelected());
+		
+		StringBuilder resultadoProceso = ProcesadorRutas.procesarRuta(configuracionBusqueda);
 		
 		this.textAreaFicherosEncontrados.appendText(resultadoProceso.toString());
 	}
