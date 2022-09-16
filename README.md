@@ -1,1 +1,1 @@
-# ad2022
+# Código base para los ejercicios del curso 22-23
